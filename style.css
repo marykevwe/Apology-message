@@ -4,54 +4,66 @@
 }
 
 body {
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   margin: 0;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   min-height: 100vh;
 }
 
 /* 💌 CARD */
 .card {
   background: white;
-  border-radius: 20px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 24px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 /* TEXT */
 h1 {
   color: #ff4d6d;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 p {
   color: #444;
-  line-height: 1.6;
+  font-size: 20px;
+  line-height: 1.7;
 }
 
 #message {
-  margin-top: 20px;
+  margin-top: 25px;
   color: #ff4d6d;
-  font-size: 20px;
+  font-size: 24px;
+  min-height: 30px;
+}
+
+/* BUTTON AREA */
+.buttons {
+  margin-top: 40px;
+  position: relative;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden; /* keeps NO inside */
 }
 
 /* BUTTONS */
-.buttons {
-  margin-top: 20px;
-  position: relative;
-  height: 200px;
-  overflow: hidden; /* keep NO inside */
-}
-
 button {
   border: none;
   border-radius: 30px;
+  font-size: 22px;
+  padding: 18px 40px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 /* YES */
 #yesBtn {
   background: #ff4d6d;
   color: white;
+  z-index: 2;
 }
 
 /* NO */
@@ -59,10 +71,11 @@ button {
   background: #aaa;
   color: white;
   position: absolute;
+  top: 80px;
 }
 
-/* 🖥️ DESKTOP ONLY */
-@media (min-width: 601px) {
+/* 🖥️ DESKTOP */
+@media (min-width: 700px) {
   body {
     display: flex;
     justify-content: center;
@@ -70,39 +83,22 @@ button {
   }
 
   .card {
-    width: 350px;
-    padding: 30px;
+    width: 380px;
+    min-height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 18px;
   }
 
   button {
     font-size: 16px;
-    padding: 12px 20px;
-  }
-}
-
-/* 📱 MOBILE — FULL SCREEN CARD */
-@media (max-width: 600px) {
-  .card {
-    width: 100%;
-    min-height: 100vh;      /* 🔥 full phone */
-    padding: 40px 24px;
-    border-radius: 0;      /* app-like feel */
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-
-  p {
-    font-size: 20px;
-  }
-
-  button {
-    font-size: 22px;
-    padding: 18px 36px;
-  }
-
-  #message {
-    font-size: 26px;
+    padding: 12px 24px;
   }
 }
